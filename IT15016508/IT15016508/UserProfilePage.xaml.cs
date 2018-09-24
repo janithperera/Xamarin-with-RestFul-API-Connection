@@ -23,9 +23,9 @@ namespace IT15016508
 
         public UserProfilePage(Post post): this()
         {
-            Title = "Profile";
             this.post = post;
             GetUser();
+            Title = this.user.id + "'s Profile";
             BindingContext = this.user;
         }
 

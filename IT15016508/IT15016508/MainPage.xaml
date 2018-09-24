@@ -5,6 +5,14 @@
              x:Class="IT15016508.MainPage">
 
     <StackLayout>
+        <ActivityIndicator
+                x:Name="ActIndicator"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" 
+                Color="Red" 
+                IsEnabled="True"
+                IsVisible="True" 
+                IsRunning="True" />
         <ListView x:Name="PostsListView" RowHeight="150">
             <ListView.ItemTemplate>
                 <DataTemplate>

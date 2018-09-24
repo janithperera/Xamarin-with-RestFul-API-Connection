@@ -15,13 +15,15 @@ namespace IT15016508
     public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
         public ObservableCollection<Post> posts { get; }
+        delegate void Load();
 
         public MainPage()
         {
             InitializeComponent();
-            Title = "All Posts";
+            Load load = new Load(GetPosts);
+            Title = "Posts";
             posts = new ObservableCollection<Post>();
-            GetPosts();
+            load.Invoke();
             this.BindingContext = this;
             PostsListView.ItemsSource = this.posts;
             PostsListView.ItemSelected += PostsListView_ItemSelected;
@@ -36,10 +38,18 @@ namespace IT15016508
         }
 
         private void GetPosts() {
+            ControlActivityIndicator(true);
             posts.Clear();
             List<Post> data = APIConnection.GetPosts();
             foreach(Post p in data)
                 this.posts.Add(p);
+            ControlActivityIndicator(false);
+        }
+
+        private void ControlActivityIndicator(bool status) {
+            this.ActIndicator.IsEnabled = status;
+            this.ActIndicator.IsRunning = status;
+            this.ActIndicator.IsVisible = status;
         }
     }
 }

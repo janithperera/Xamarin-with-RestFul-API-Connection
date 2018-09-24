@@ -16,6 +16,9 @@ namespace IT15016508.DATA
         [JsonProperty(PropertyName = "username")]
         public string username { get; set; }
 
+        [JsonProperty(PropertyName = "email")]
+        public string email { get; set; }
+
         [JsonProperty(PropertyName = "address")]
         public UserAddress address { get; set; }
 

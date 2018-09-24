@@ -9,28 +9,41 @@
                 <BoxView HeightRequest="2" Color="Black"/>
                 <Label FontAttributes="Bold" Text="User information" Margin="2" HorizontalTextAlignment="Center" />
                 <BoxView HeightRequest="2" Color="Black"/>
+                <Image Source="profile.png" HeightRequest="100" WidthRequest="100"></Image>
             </StackLayout>
             <TableView>
             <TableRoot>
                 <TableSection>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name" TextColor="#f35e20" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                            <Label Text="Name" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
                             <Label Text="{Binding name}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Username" TextColor="#f35e20" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                            <Label Text="Username" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
                             <Label Text="{Binding username}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Username" TextColor="#f35e20" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
-                                <Label Text="{Binding username}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
-                            </StackLayout>
-                        </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Email" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                            <Label Text="{Binding email}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Website" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                            <Label Text="{Binding website}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                       <StackLayout Orientation="Horizontal">
+                            <Label Text="Contact" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                            <Label Text="{Binding phone}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                       </StackLayout>
+                    </ViewCell>
                 </TableSection>
             </TableRoot>
         </TableView>

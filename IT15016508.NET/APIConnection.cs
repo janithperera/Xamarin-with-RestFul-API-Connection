@@ -11,37 +11,46 @@ namespace IT15016508.NET
     public class APIConnection
     {
         public static List<Post> GetPosts() {
-            List<Post> posts = new List<Post>();
-            using (WebClient client = new WebClient()) {
-                string json = client.DownloadString("https://jsonplaceholder.typicode.com/posts");
-                if (!string.IsNullOrEmpty(json))
-                    posts = JsonConvert.DeserializeObject<Post[]>(json).ToList();
+            try
+            {
+                List<Post> posts = new List<Post>();
+                using (WebClient client = new WebClient())
+                {
+                    string json = client.DownloadString("https://jsonplaceholder.typicode.com/posts");
+                    if (!string.IsNullOrEmpty(json))
+                        posts = JsonConvert.DeserializeObject<Post[]>(json).ToList();
+                }
+                return posts;
             }
-            return posts;
+            catch (Exception) { return new List<Post>(); }
         }
 
         public static List<Comment> GetComments(int id) {
-            List<Comment> comments = new List<Comment>();
-            using (WebClient client = new WebClient()) {
-                string json = client.DownloadString("https://jsonplaceholder.typicode.com/comments?postId="+id);
-                if (!string.IsNullOrEmpty(json))
-                    comments = JsonConvert.DeserializeObject<Comment[]>(json).ToList();
+            try
+            {
+                List<Comment> comments = new List<Comment>();
+                using (WebClient client = new WebClient())
+                {
+                    string json = client.DownloadString("https://jsonplaceholder.typicode.com/comments?postId=" + id);
+                    if (!string.IsNullOrEmpty(json))
+                        comments = JsonConvert.DeserializeObject<Comment[]>(json).ToList();
+                }
+                return comments;
             }
-            return comments;
+            catch (Exception) { return new List<Comment>(); }
         }
 
         public static User GetUser(int id) {
-            User user = new User();
-            using (WebClient client = new WebClient()) {
-                string json = client.DownloadString("https://jsonplaceholder.typicode.com/users?id=" + id);
-                if (!string.IsNullOrEmpty(json))
+            try
+            {
+                User user = new User();
+                using (WebClient client = new WebClient())
                 {
-                    List<User> users = JsonConvert.DeserializeObject<User[]>(json).ToList();
-                    if (users.Count > 0)
-                        user = users[0];
+                    string json = client.DownloadString("https://jsonplaceholder.typicode.com/users/" + id);
+                    user = JsonConvert.DeserializeObject<User>(json);
                 }
-            }
-            return user;
+                return user;
+            }catch(Exception) { return new User(); }
         }
     }
 }
