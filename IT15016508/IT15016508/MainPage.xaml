@@ -5,10 +5,20 @@
              x:Class="IT15016508.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <ListView x:Name="PostsListView" RowHeight="150">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid Margin="8">
+                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding Title}" FontAttributes="Bold" />
+                                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Body}" />
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
