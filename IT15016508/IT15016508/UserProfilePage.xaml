@@ -4,9 +4,36 @@
              x:Class="IT15016508.UserProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Label HeightRequest="5"/>
+                <BoxView HeightRequest="2" Color="Black"/>
+                <Label FontAttributes="Bold" Text="User information" Margin="2" HorizontalTextAlignment="Center" />
+                <BoxView HeightRequest="2" Color="Black"/>
+            </StackLayout>
+            <TableView>
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name" TextColor="#f35e20" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                            <Label Text="{Binding name}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Username" TextColor="#f35e20" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                            <Label Text="{Binding username}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Username" TextColor="#f35e20" Margin="5" VerticalOptions="Center" WidthRequest="100"/>
+                                <Label Text="{Binding username}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

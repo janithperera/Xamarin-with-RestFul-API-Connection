@@ -11,8 +11,8 @@
                     <ViewCell>
                         <ViewCell.View>
                             <Grid Margin="8">
-                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding Title}" FontAttributes="Bold" />
-                                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Body}" />
+                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding title}" FontAttributes="Bold" />
+                                <Label Grid.Column="0" Grid.Row="1" Text="{Binding body}" />
                             </Grid>
                         </ViewCell.View>
                     </ViewCell>

@@ -8,12 +8,12 @@ namespace IT15016508.DATA
     public class UserCompany
     {
         [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         [JsonProperty(PropertyName = "catchPhrase")]
-        public string CatchPhrase { get; set; }
+        public string catchPhrase { get; set; }
 
         [JsonProperty(PropertyName = "bs")]
-        public string BusinessStrategy { get; set; }
+        public string bs { get; set; }
     }
 }

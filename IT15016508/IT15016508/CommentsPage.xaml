@@ -2,11 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IT15016508.CommentsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="PROFILE" 
+            Icon="profile.png" 
+            Priority="0" 
+            Order="Primary" 
+            Activated="ViewProfile" 
+            Command="{Binding ViewProfile}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="CommentsListView" RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid Margin="8">
+                                    <Label Grid.Column="0" Grid.Row="0" Text="{Binding name}" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding body}" HorizontalTextAlignment="Start" />
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

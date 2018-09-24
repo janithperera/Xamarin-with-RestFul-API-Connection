@@ -8,8 +8,8 @@ namespace IT15016508.DATA
     public class UserAddressGeo
     {
         [JsonProperty(PropertyName = "lat")]
-        public double? Latitude { get; set; }
+        public string lat { get; set; }
         [JsonProperty(PropertyName = "lng")]
-        public double? Longitude { get; set; }
+        public string lng { get; set; }
     }
 }

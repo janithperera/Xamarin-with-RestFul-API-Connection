@@ -8,24 +8,24 @@ namespace IT15016508.DATA
     public class User
     {
         [JsonProperty(PropertyName = "id")]
-        public int? Id { get; set; }
+        public int id { get; set; }
 
         [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         [JsonProperty(PropertyName = "username")]
-        public string Username { get; set; }
+        public string username { get; set; }
 
         [JsonProperty(PropertyName = "address")]
-        public UserAddress Address { get; set; }
+        public UserAddress address { get; set; }
 
         [JsonProperty(PropertyName = "phone")]
-        public string Phone { get; set; }
+        public string phone { get; set; }
 
         [JsonProperty(PropertyName = "website")]
-        public string Website { get; set; }
+        public string website { get; set; }
 
         [JsonProperty(PropertyName = "company")]
-        public UserCompany Company { get; set; }
+        public UserCompany company { get; set; }
     }
 }

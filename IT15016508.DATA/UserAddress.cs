@@ -8,18 +8,18 @@ namespace IT15016508.DATA
     public class UserAddress
     {
         [JsonProperty(PropertyName = "street")]
-        public string Street { get; set; }
+        public string street { get; set; }
 
         [JsonProperty(PropertyName = "suite")]
-        public string Suite { get; set; }
+        public string suite { get; set; }
 
         [JsonProperty(PropertyName = "city")]
-        public string City { get; set; }
+        public string city { get; set; }
 
         [JsonProperty(PropertyName = "zipcode")]
-        public string ZipCode { get; set; }
+        public string zipcode { get; set; }
 
         [JsonProperty(PropertyName = "geo")]
-        public UserAddressGeo Geo { get; set; }
+        public UserAddressGeo geo { get; set; }
     }
 }

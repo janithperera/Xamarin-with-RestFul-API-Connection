@@ -7,22 +7,24 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using IT15016508.DATA;
 using IT15016508.NET;
+using System.ComponentModel;
+using System.Diagnostics;
 
 namespace IT15016508
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
         public ObservableCollection<Post> posts { get; }
 
         public MainPage()
         {
             InitializeComponent();
-            this.BindingContext = this;
             Title = "All Posts";
             posts = new ObservableCollection<Post>();
+            GetPosts();
+            this.BindingContext = this;
             PostsListView.ItemsSource = this.posts;
             PostsListView.ItemSelected += PostsListView_ItemSelected;
-            GetPosts();
         }
 
         private void PostsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
@@ -36,9 +38,8 @@ namespace IT15016508
         private void GetPosts() {
             posts.Clear();
             List<Post> data = APIConnection.GetPosts();
-            foreach(Post p in this.posts) {
+            foreach(Post p in data)
                 this.posts.Add(p);
-            }
         }
     }
 }
