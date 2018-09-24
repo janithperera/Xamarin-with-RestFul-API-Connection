@@ -19,9 +19,9 @@ namespace IT15016508
         private ObservableCollection<Comment> comments;
 
         public CommentsPage ()
-		{
-			InitializeComponent ();
-		}
+	{
+		InitializeComponent ();
+	}
 
         public CommentsPage(Post post) : this()
         {
